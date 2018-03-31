@@ -1,0 +1,6861 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Hexo |  </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700" rel="stylesheet">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/style/doc.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+  </head>
+  <body>
+
+   <script>window.__INITIAL_STATE__ = {"page":{"path":"swagger/storeapi.html","title":""},"data":{"navigation":{"logo":{"text":"vvchat开放平台","type":"link","path":"index.html"},"main":[{"text":"应用内H5","type":"link","path":"jssdk/index.html"},{"text":"RESTful API","type":"label","children":[{"text":"用户服务","type":"link","path":"swagger/userservices.html"},{"text":"关系服务","type":"link","path":"swagger/relationapi.html"},{"text":"支付基础服务","type":"link","path":"swagger/payv2api.html"},{"text":"支付业务服务","type":"link","path":"swagger/paybusapi.html"},{"text":"店铺服务","type":"link","path":"swagger/storeapi.html"},{"text":"群组服务","type":"link","path":"swagger/groupapi.html"},{"text":"权限服务","type":"link","path":"swagger/rbacapi.html"},{"text":"短信服务","type":"link","path":"swagger/smsapi.html"},{"text":"红包服务","type":"link","path":"swagger/redpacket.html"},{"text":"通知服务","type":"link","path":"swagger/notificationapi.html"},{"text":"名字服务","type":"link","path":"swagger/nameapi.html"},{"text":"通讯录服务","type":"link","path":"swagger/contactsapi.html"},{"text":"设置服务","type":"link","path":"swagger/settingapi.html"},{"text":"反馈服务","type":"link","path":"swagger/feedapi.html"},{"text":"离线消息服务","type":"link","path":"swagger/imofflinemsgapi.html"},{"text":"消息服务","type":"link","path":"swagger/messageapi.html"}]}]}},"config":{"timezone":null,"root":"/","time_format":"HH:mm:ss","theme":"hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"/favicon.ico"}}}</script>
+
+    <div id="react-navigation-root"><div class="doc-navigation" data-reactroot=""><nav class="doc-navbar"><a href="/index.html" class="doc-navbar__logo"><img src="/images/logo.png" class="doc-navbar__logo__img"/><span class="doc-navbar__logo__text">vvchat开放平台</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"></ul></div></nav></div></div>
+    <div class="doc-content">
+  <div class="dc-page">
+    <div class="dc-card">
+      <div id="react-search-results-root"></div>
+      <div id="page-content" class="doc-formatting">
+        <div class="doc-swagger-to-html">
+                <div class="download-btn" data-download-route="/aec3a661d7c2d9b82f13e02410bc4fd9/swagger.yaml">
+                  <a class="download-btn__link" href="/aec3a661d7c2d9b82f13e02410bc4fd9/swagger.yaml" target="_blank" download="">Download Schema</a>
+                </div>
+                <div class="head">
+  <div class="head__title">
+    <h1 class="head__title__text">
+      商铺业务服务
+    </h1>
+    <div class="head__title__version">
+        Version: 1.0.0
+    </div>
+  </div>
+  <div class="head__description">
+    商铺业务服务
+  </div>
+</div>
+
+  <div class="security">
+    <h2 id="security__title"> Security Definitions</h2>
+    <div class="security__definitions">
+      
+        <div class="security_definition">
+  <h3 class="security_definition__name">
+      app_id
+  </h3>
+  
+    <div class="security_definition__info">
+      应用ID
+    </div>
+  
+  
+    <div class="security_definition__info">
+      The type of security scheme is <code class="inline-code">apiKey</code>.
+    </div>
+  
+  
+    <div class="security_definition__info">
+      The name of the <code class="inline-code">header</code> to be used is <code class="inline-code">app_id</code>.
+    </div>
+  
+  
+  
+  
+  
+</div>
+
+      
+        <div class="security_definition">
+  <h3 class="security_definition__name">
+      Authorization
+  </h3>
+  
+    <div class="security_definition__info">
+      用户token
+    </div>
+  
+  
+    <div class="security_definition__info">
+      The type of security scheme is <code class="inline-code">apiKey</code>.
+    </div>
+  
+  
+    <div class="security_definition__info">
+      The name of the <code class="inline-code">header</code> to be used is <code class="inline-code">Authorization</code>.
+    </div>
+  
+  
+  
+  
+  
+</div>
+
+      
+    </div>
+  </div>
+
+<div class="body">
+  <div class="definitions">
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E5%BA%97%E9%93%BA%E4%BC%9A%E5%91%98%E4%BA%A4%E6%98%93%E8%AE%B0%E5%BD%95" class="operation-info__title">店铺会员交易记录</h2>
+
+    <div class="operation-info__description">店铺会员交易记录</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--get">
+        GET
+      </div>
+      <div class="operation-info__verb__path">
+        /stores/{store_no}/viptransactions
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          store_no
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          店铺编号
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          page_index
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            integer 
+          </div>
+        
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          页码
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          page_size
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            integer 
+          </div>
+        
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          页大小
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X GET http://storeapi.qiyunxin.com/v1/stores/{store_no}/viptransactions</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        []
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        会员交易信息
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer  (int64) 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        id
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].app_id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        app id
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].create_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        创建时间
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].update_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        修改时间
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].store_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].open_id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        open_id
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].total_amount
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          number 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        总交易金额
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].total_count
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        总交易次数
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].last_t_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer  (int64) 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        最后一次交易时间
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].ext
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        附加数据
+      </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E5%BA%97%E9%93%BA%E4%BC%9A%E5%91%98%E7%BB%9F%E8%AE%A1%E4%BF%A1%E6%81%AF" class="operation-info__title">店铺会员统计信息</h2>
+
+    <div class="operation-info__description">店铺会员统计信息</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--get">
+        GET
+      </div>
+      <div class="operation-info__verb__path">
+        /stores/{store_no}/viptotal
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          store_no
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          用户open_id
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X GET http://storeapi.qiyunxin.com/v1/stores/{store_no}/viptotal</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        total_count
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer  (int64) 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺总会员数
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        month_count
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer  (int64) 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        一个月内新增的会员数
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        today_count
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer  (int64) 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        今日新增会员数
+      </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E6%B3%A8%E5%86%8C%E5%BA%97%E9%93%BA" class="operation-info__title">注册店铺</h2>
+
+    <div class="operation-info__description">注册店铺</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--post">
+        POST
+      </div>
+      <div class="operation-info__verb__path">
+        /users/{open_id}/store/register
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          用户open_id
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Request Body
+  </div>
+  
+  
+    
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        parent_store_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        父类店铺编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        title
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺标题
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        创建者联系方式
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        创建者名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        service_phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务电话
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        service_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务时间
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        province
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        省份名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        city
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        城市名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        area
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        区域
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        address
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺地址
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        longitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺经度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        latitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺维度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        type
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺类型
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        ext
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        扩展字段
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        icon
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺logo
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        level
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺等级
+      </div>
+    
+    
+    
+  </div>
+
+
+
+
+  
+</div>
+
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X POST http://storeapi.qiyunxin.com/v1/users/{open_id}/store/register</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回成功
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer  (int64) 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        ID
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        store_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        parent_store_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        父类店铺编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        title
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺标题
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        联系人名字
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        联系人电话
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        service_phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务电话
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        service_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务时间
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        province
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        省份名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        city
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        城市名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        area
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        区域
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        address
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺地址
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        latitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          number 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        经度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        longitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          number 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        维度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        type
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺类型
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        ext
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        扩展字段
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        icon
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺logo
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        open_id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺所属者id
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        level
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺等级
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        create_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        创建时间
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        token
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        token
+      </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E5%BA%97%E9%93%BA%E8%AE%A4%E8%AF%81" class="operation-info__title">店铺认证</h2>
+
+    <div class="operation-info__description">店铺认证</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--post">
+        POST
+      </div>
+      <div class="operation-info__verb__path">
+        /users/{open_id}/stores/{store_no}/auth
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          用户open_id
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          store_no
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          店铺编号（填写default为默认店铺）
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X POST http://storeapi.qiyunxin.com/v1/users/{open_id}/stores/{store_no}/auth</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回成功
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer  (int64) 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        ID
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        store_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        parent_store_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        父类店铺编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        title
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺标题
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        联系人名字
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        联系人电话
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        service_phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务电话
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        service_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务时间
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        province
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        省份名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        city
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        城市名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        area
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        区域
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        address
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺地址
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        latitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          number 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        经度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        longitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          number 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        维度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        type
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺类型
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        ext
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        扩展字段
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        icon
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺logo
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        open_id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺所属者id
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        level
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺等级
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        create_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        创建时间
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        token
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        token
+      </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E8%8E%B7%E5%8F%96%E6%8C%87%E5%AE%9A%E7%9A%84%E5%BA%97%E9%93%BA%E8%AF%A6%E6%83%85" class="operation-info__title">获取指定的店铺详情</h2>
+
+    <div class="operation-info__description">获取指定的店铺详情</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--get">
+        GET
+      </div>
+      <div class="operation-info__verb__path">
+        /stores/{store_no}
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          store_no
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          店铺ID
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X GET http://storeapi.qiyunxin.com/v1/stores/{store_no}</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      店铺信息
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer  (int64) 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        ID
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        store_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        parent_store_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        父类店铺编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        title
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺标题
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        联系人名字
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        联系人电话
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        service_phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务电话
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        service_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务时间
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        province
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        省份名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        city
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        城市名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        area
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        区域
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        address
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺地址
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        latitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          number 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        经度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        longitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          number 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        维度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        type
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺类型
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        ext
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        扩展字段
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        icon
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺logo
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        open_id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺所属者id
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        level
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺等级
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        create_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        创建时间
+      </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E4%BF%AE%E6%94%B9%E6%8C%87%E5%AE%9A%E7%9A%84%E5%BA%97%E9%93%BA" class="operation-info__title">修改指定的店铺</h2>
+
+    <div class="operation-info__description">修改指定的店铺</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--put">
+        PUT
+      </div>
+      <div class="operation-info__verb__path">
+        /users/{open_id}/stores/{store_no}
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          用户open_id
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          store_no
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            integer  (int64) 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          店铺ID
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Request Body
+  </div>
+  
+  
+    
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        parent_store_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        父类店铺编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        title
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺标题
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        创建者联系方式
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        创建者名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        service_phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务电话
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        service_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务时间
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        province
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        省份名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        city
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        城市名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        area
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        区域
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        address
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺地址
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        longitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺经度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        latitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺维度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        type
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺类型
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        ext
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        扩展字段
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        icon
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺logo
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        level
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺等级
+      </div>
+    
+    
+    
+  </div>
+
+
+
+
+  
+</div>
+
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X PUT http://storeapi.qiyunxin.com/v1/users/{open_id}/stores/{store_no}</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer  (int64) 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        ID
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        store_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        parent_store_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        父类店铺编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        title
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺标题
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        联系人名字
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        联系人电话
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        service_phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务电话
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        service_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务时间
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        province
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        省份名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        city
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        城市名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        area
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        区域
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        address
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺地址
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        latitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          number 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        经度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        longitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          number 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        维度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        type
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺类型
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        ext
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        扩展字段
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        icon
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺logo
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        open_id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺所属者id
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        level
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺等级
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        create_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        创建时间
+      </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2%E5%BA%97%E9%93%BA%E5%88%97%E8%A1%A8(%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6)" class="operation-info__title">分页查询店铺列表(权限控制)</h2>
+
+    <div class="operation-info__description">分页查询店铺列表(权限控制)</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--get">
+        GET
+      </div>
+      <div class="operation-info__verb__path">
+        /stores
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          keyword
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          关键字查询（店铺标题）
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          parent_store_no
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          父类店铺编号
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          type
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          店铺类型
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          member_open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          成员open_id
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          member_role
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          成员角色
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          page_index
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            integer  (int64) 
+          </div>
+        
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          页码
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          page_size
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            integer  (int64) 
+          </div>
+        
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          页大小
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X GET http://storeapi.qiyunxin.com/v1/stores</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        page_size
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        页大小
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        page_index
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        页码
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        total
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        总数据大小
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          array 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        数据
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[]
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer  (int64) 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        ID
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].store_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].parent_store_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        父类店铺编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].title
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺标题
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        联系人名字
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        联系人电话
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].service_phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务电话
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].service_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务时间
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].province
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        省份名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].city
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        城市名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].area
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        区域
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].address
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺地址
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].latitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          number 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        经度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].longitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          number 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        维度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].type
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺类型
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].ext
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        扩展字段
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].icon
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺logo
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].open_id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺所属者id
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].level
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺等级
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data[].create_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        创建时间
+      </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E6%B7%BB%E5%8A%A0%E5%BA%97%E9%93%BA(%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6)" class="operation-info__title">添加店铺(权限控制)</h2>
+
+    <div class="operation-info__description">添加店铺(权限控制)</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--post">
+        POST
+      </div>
+      <div class="operation-info__verb__path">
+        /stores
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Request Body
+  </div>
+  
+  
+    
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        parent_store_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        父类店铺编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        title
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺标题
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        创建者联系方式
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        创建者名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        service_phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务电话
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        service_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务时间
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        province
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        省份名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        city
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        城市名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        area
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        区域
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        address
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺地址
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        longitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺经度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        latitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺维度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        type
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺类型
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        ext
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        扩展字段
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        icon
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺logo
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        level
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺等级
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        members
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          array 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        token
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        members[]
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        members[].open_id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        用户open_id
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        members[].name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        用户名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        members[].role
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        用户角色
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        members[].status
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer  (int) 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        成员状态 0.禁用 1.正常
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        members[].ext
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        扩展数据
+      </div>
+    
+    
+    
+  </div>
+
+
+
+
+  
+</div>
+
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X POST http://storeapi.qiyunxin.com/v1/stores</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer  (int64) 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        ID
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        store_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        parent_store_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        父类店铺编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        title
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺标题
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        联系人名字
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        联系人电话
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        service_phone
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务电话
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        service_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        服务时间
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        province
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        省份名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        city
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        城市名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        area
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        区域
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        address
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺地址
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        latitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          number 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        经度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        longitude
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          number 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        维度
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        type
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺类型
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        ext
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        扩展字段
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        icon
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺logo
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        open_id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺所属者id
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        level
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        店铺等级
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        create_time
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        创建时间
+      </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E6%9F%A5%E8%AF%A2%E5%BA%97%E9%93%BA%E6%88%90%E5%91%98%E5%88%97%E8%A1%A8" class="operation-info__title">查询店铺成员列表</h2>
+
+    <div class="operation-info__description">查询店铺成员列表</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--get">
+        GET
+      </div>
+      <div class="operation-info__verb__path">
+        /stores/{store_no}/members
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          store_no
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          店铺编号
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          member_open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          成员open_id
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          keyword
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          关键字查询（成员昵称）
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X GET http://storeapi.qiyunxin.com/v1/stores/{store_no}/members</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E6%9B%B4%E6%96%B0%E5%BA%97%E9%93%BA%E7%8A%B6%E6%80%81" class="operation-info__title">更新店铺状态</h2>
+
+    <div class="operation-info__description">更新店铺状态</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--put">
+        PUT
+      </div>
+      <div class="operation-info__verb__path">
+        /stores/{store_no}/status/{status}
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          store_no
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          店铺编号
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          status
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          店铺状态 0.未启用 1.正常营业 2.营业关闭
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X PUT http://storeapi.qiyunxin.com/v1/stores/{store_no}/status/{status}</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+  </div>
+</div>
+
+              </div>
+
+        <div id="react-support-footer-root"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+    
+
+    <!-- js vendors -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.0/lunr.min.js"></script>
+
+    <!-- js source  -->
+    <script src="/script/doc.js"></script>
+
+    
+
+  </body>
+</html>

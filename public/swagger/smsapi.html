@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Hexo |  </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700" rel="stylesheet">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/style/doc.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+  </head>
+  <body>
+
+   <script>window.__INITIAL_STATE__ = {"page":{"path":"swagger/smsapi.html","title":""},"data":{"navigation":{"logo":{"text":"vvchat开放平台","type":"link","path":"index.html"},"main":[{"text":"应用内H5","type":"link","path":"jssdk/index.html"},{"text":"RESTful API","type":"label","children":[{"text":"用户服务","type":"link","path":"swagger/userservices.html"},{"text":"关系服务","type":"link","path":"swagger/relationapi.html"},{"text":"支付基础服务","type":"link","path":"swagger/payv2api.html"},{"text":"支付业务服务","type":"link","path":"swagger/paybusapi.html"},{"text":"店铺服务","type":"link","path":"swagger/storeapi.html"},{"text":"群组服务","type":"link","path":"swagger/groupapi.html"},{"text":"权限服务","type":"link","path":"swagger/rbacapi.html"},{"text":"短信服务","type":"link","path":"swagger/smsapi.html"},{"text":"红包服务","type":"link","path":"swagger/redpacket.html"},{"text":"通知服务","type":"link","path":"swagger/notificationapi.html"},{"text":"名字服务","type":"link","path":"swagger/nameapi.html"},{"text":"通讯录服务","type":"link","path":"swagger/contactsapi.html"},{"text":"设置服务","type":"link","path":"swagger/settingapi.html"},{"text":"反馈服务","type":"link","path":"swagger/feedapi.html"},{"text":"离线消息服务","type":"link","path":"swagger/imofflinemsgapi.html"},{"text":"消息服务","type":"link","path":"swagger/messageapi.html"}]}]}},"config":{"timezone":null,"root":"/","time_format":"HH:mm:ss","theme":"hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"/favicon.ico"}}}</script>
+
+    <div id="react-navigation-root"><div class="doc-navigation" data-reactroot=""><nav class="doc-navbar"><a href="/index.html" class="doc-navbar__logo"><img src="/images/logo.png" class="doc-navbar__logo__img"/><span class="doc-navbar__logo__text">vvchat开放平台</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"></ul></div></nav></div></div>
+    <div class="doc-content">
+  <div class="dc-page">
+    <div class="dc-card">
+      <div id="react-search-results-root"></div>
+      <div id="page-content" class="doc-formatting">
+        <div class="doc-swagger-to-html">
+                <div class="download-btn" data-download-route="/48b1b9cfe53e51952e0cf322b8655535/swagger.yaml">
+                  <a class="download-btn__link" href="/48b1b9cfe53e51952e0cf322b8655535/swagger.yaml" target="_blank" download="">Download Schema</a>
+                </div>
+                <div class="head">
+  <div class="head__title">
+    <h1 class="head__title__text">
+      短信API
+    </h1>
+    <div class="head__title__version">
+        Version: 2.0.0
+    </div>
+  </div>
+  <div class="head__description">
+    短信API
+  </div>
+</div>
+
+<div class="body">
+  <div class="definitions">
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E5%8F%91%E9%80%81%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81%E7%A0%81" class="operation-info__title">发送短信验证码</h2>
+
+    <div class="operation-info__description">发送短信验证码
+</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--get">
+        GET
+      </div>
+      <div class="operation-info__verb__path">
+        /verifycode/send
+      </div>
+    </div>
+  </div>
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          phones
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          手机号 多个以逗号隔开
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          type
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          短信类型 例如: register,  pay
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          channel
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          使用通道 custom(自定义通道需要配置custom.json)
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X GET http://smsapi.qiyunxin.com/v1/verifycode/send</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      成功返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E6%A3%80%E6%9F%A5%E9%AA%8C%E8%AF%81%E7%A0%81-(%E5%86%85%E9%83%A8%E6%8E%A5%E5%8F%A3%EF%BC%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8D%E8%83%BD%E8%B0%83%E7%94%A8)" class="operation-info__title">检查验证码 (内部接口，客户端不能调用)</h2>
+
+    <div class="operation-info__description">检查验证码
+</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--get">
+        GET
+      </div>
+      <div class="operation-info__verb__path">
+        /verifycode/check
+      </div>
+    </div>
+  </div>
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          phones
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          手机号
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          verify_code
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          验证码
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          type
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          短信类型 例如: register,  pay
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X GET http://smsapi.qiyunxin.com/v1/verifycode/check</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      成功返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+  </div>
+</div>
+
+              </div>
+
+        <div id="react-support-footer-root"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+    
+
+    <!-- js vendors -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.0/lunr.min.js"></script>
+
+    <!-- js source  -->
+    <script src="/script/doc.js"></script>
+
+    
+
+  </body>
+</html>

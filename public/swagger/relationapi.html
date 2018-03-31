@@ -1,0 +1,3937 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Hexo |  </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700" rel="stylesheet">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/style/doc.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+  </head>
+  <body>
+
+   <script>window.__INITIAL_STATE__ = {"page":{"path":"swagger/relationapi.html","title":""},"data":{"navigation":{"logo":{"text":"vvchat开放平台","type":"link","path":"index.html"},"main":[{"text":"应用内H5","type":"link","path":"jssdk/index.html"},{"text":"RESTful API","type":"label","children":[{"text":"用户服务","type":"link","path":"swagger/userservices.html"},{"text":"关系服务","type":"link","path":"swagger/relationapi.html"},{"text":"支付基础服务","type":"link","path":"swagger/payv2api.html"},{"text":"支付业务服务","type":"link","path":"swagger/paybusapi.html"},{"text":"店铺服务","type":"link","path":"swagger/storeapi.html"},{"text":"群组服务","type":"link","path":"swagger/groupapi.html"},{"text":"权限服务","type":"link","path":"swagger/rbacapi.html"},{"text":"短信服务","type":"link","path":"swagger/smsapi.html"},{"text":"红包服务","type":"link","path":"swagger/redpacket.html"},{"text":"通知服务","type":"link","path":"swagger/notificationapi.html"},{"text":"名字服务","type":"link","path":"swagger/nameapi.html"},{"text":"通讯录服务","type":"link","path":"swagger/contactsapi.html"},{"text":"设置服务","type":"link","path":"swagger/settingapi.html"},{"text":"反馈服务","type":"link","path":"swagger/feedapi.html"},{"text":"离线消息服务","type":"link","path":"swagger/imofflinemsgapi.html"},{"text":"消息服务","type":"link","path":"swagger/messageapi.html"}]}]}},"config":{"timezone":null,"root":"/","time_format":"HH:mm:ss","theme":"hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"/favicon.ico"}}}</script>
+
+    <div id="react-navigation-root"><div class="doc-navigation" data-reactroot=""><nav class="doc-navbar"><a href="/index.html" class="doc-navbar__logo"><img src="/images/logo.png" class="doc-navbar__logo__img"/><span class="doc-navbar__logo__text">vvchat开放平台</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"></ul></div></nav></div></div>
+    <div class="doc-content">
+  <div class="dc-page">
+    <div class="dc-card">
+      <div id="react-search-results-root"></div>
+      <div id="page-content" class="doc-formatting">
+        <div class="doc-swagger-to-html">
+                <div class="download-btn" data-download-route="/48864ee05ae4fa1bc0c3f0f62b25f7b0/swagger.yaml">
+                  <a class="download-btn__link" href="/48864ee05ae4fa1bc0c3f0f62b25f7b0/swagger.yaml" target="_blank" download="">Download Schema</a>
+                </div>
+                <div class="head">
+  <div class="head__title">
+    <h1 class="head__title__text">
+      关系服务
+    </h1>
+    <div class="head__title__version">
+        Version: 1.0.0
+    </div>
+  </div>
+  <div class="head__description">
+    关系服务
+  </div>
+</div>
+
+  <div class="security">
+    <h2 id="security__title"> Security Definitions</h2>
+    <div class="security__definitions">
+      
+        <div class="security_definition">
+  <h3 class="security_definition__name">
+      app_id
+  </h3>
+  
+    <div class="security_definition__info">
+      应用ID
+    </div>
+  
+  
+    <div class="security_definition__info">
+      The type of security scheme is <code class="inline-code">apiKey</code>.
+    </div>
+  
+  
+    <div class="security_definition__info">
+      The name of the <code class="inline-code">header</code> to be used is <code class="inline-code">app_id</code>.
+    </div>
+  
+  
+  
+  
+  
+</div>
+
+      
+        <div class="security_definition">
+  <h3 class="security_definition__name">
+      Authorization
+  </h3>
+  
+    <div class="security_definition__info">
+      用户token
+    </div>
+  
+  
+    <div class="security_definition__info">
+      The type of security scheme is <code class="inline-code">apiKey</code>.
+    </div>
+  
+  
+    <div class="security_definition__info">
+      The name of the <code class="inline-code">header</code> to be used is <code class="inline-code">Authorization</code>.
+    </div>
+  
+  
+  
+  
+  
+</div>
+
+      
+        <div class="security_definition">
+  <h3 class="security_definition__name">
+      sign
+  </h3>
+  
+    <div class="security_definition__info">
+      签名
+    </div>
+  
+  
+    <div class="security_definition__info">
+      The type of security scheme is <code class="inline-code">apiKey</code>.
+    </div>
+  
+  
+    <div class="security_definition__info">
+      The name of the <code class="inline-code">header</code> to be used is <code class="inline-code">sign</code>.
+    </div>
+  
+  
+  
+  
+  
+</div>
+
+      
+        <div class="security_definition">
+  <h3 class="security_definition__name">
+      noncestr
+  </h3>
+  
+    <div class="security_definition__info">
+      随机字符串
+    </div>
+  
+  
+    <div class="security_definition__info">
+      The type of security scheme is <code class="inline-code">apiKey</code>.
+    </div>
+  
+  
+    <div class="security_definition__info">
+      The name of the <code class="inline-code">header</code> to be used is <code class="inline-code">noncestr</code>.
+    </div>
+  
+  
+  
+  
+  
+</div>
+
+      
+        <div class="security_definition">
+  <h3 class="security_definition__name">
+      timestamp
+  </h3>
+  
+    <div class="security_definition__info">
+      时间戳
+    </div>
+  
+  
+    <div class="security_definition__info">
+      The type of security scheme is <code class="inline-code">apiKey</code>.
+    </div>
+  
+  
+    <div class="security_definition__info">
+      The name of the <code class="inline-code">header</code> to be used is <code class="inline-code">timestamp</code>.
+    </div>
+  
+  
+  
+  
+  
+</div>
+
+      
+    </div>
+  </div>
+
+<div class="body">
+  <div class="definitions">
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E9%A2%84%E5%A4%87%E6%B7%BB%E5%8A%A0%E5%85%B3%E7%B3%BB" class="operation-info__title">预备添加关系</h2>
+
+    <div class="operation-info__description">预备添加关系
+</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--post">
+        POST
+      </div>
+      <div class="operation-info__verb__path">
+        /users/{open_id}/prerelation
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          用户open_id
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Request Body
+  </div>
+  
+  
+    
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        用户名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        props
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        用户属性
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        r_open_id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        关联用户open_id
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        r_name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        关联用户名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        r_props
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        关联用户属性
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        type
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        关系类型  friend 朋友 , coworker 同事 等等
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        mutual
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        相互关联 (1.相互关联 0.单项关联)
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        remark
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        备注信息，留言信息
+      </div>
+    
+    
+    
+  </div>
+
+
+
+
+  
+</div>
+
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X POST http://relationapi.qiyunxin.com/v1/users/{open_id}/prerelation</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        pre_relation_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        预备关系编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data.open_id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        用户open_id
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data.name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        用户名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data.type
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        关系类型  friend 朋友 , coworker 同事 等等
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data.props
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        属性
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        type
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        关系类型  friend 朋友 , coworker 同事 等等
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        props
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        属性
+      </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E6%B7%BB%E5%8A%A0%E5%85%B3%E7%B3%BB" class="operation-info__title">添加关系</h2>
+
+    <div class="operation-info__description">添加关系
+</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--post">
+        POST
+      </div>
+      <div class="operation-info__verb__path">
+        /users/{open_id}/relation/{pre_relation_no}
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          用户open_id
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          pre_relation_no
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          预备关系编号
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X POST http://relationapi.qiyunxin.com/v1/users/{open_id}/relation/{pre_relation_no}</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E8%8E%B7%E5%8F%96%E8%B7%9F%E5%BD%93%E5%89%8D%E7%94%A8%E6%88%B7%E6%9C%89%E5%85%B3%E7%9A%84%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE" class="operation-info__title">获取跟当前用户有关的关系数据</h2>
+
+    <div class="operation-info__description">获取跟当前用户有关的关系数据
+</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--get">
+        GET
+      </div>
+      <div class="operation-info__verb__path">
+        /users/{open_id}/relation
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          用户open_id
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          type
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          关系类型（为空即查询有关系的人）
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          direction
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          查询反向 默认为正向查询  reverse 反向查询
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          depth
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          深度 比如查询我的好友 深度为1  查询我的好友的好友深度为2（默认为1）
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X GET http://relationapi.qiyunxin.com/v1/users/{open_id}/relation</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        []
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].open_id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        用户open_id
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        用户名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].type
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        关系类型  friend 朋友 , coworker 同事 等等
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].props
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        属性
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].type_props
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        关系类型的属性
+      </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E8%8E%B7%E5%8F%96%E4%B8%8E%E6%8C%87%E5%AE%9A%E7%94%A8%E6%88%B7%E7%9A%84%E5%85%B3%E7%B3%BB%E7%B1%BB%E5%9E%8B" class="operation-info__title">获取与指定用户的关系类型</h2>
+
+    <div class="operation-info__description">获取与指定用户的关系类型
+</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--delete">
+        DELETE
+      </div>
+      <div class="operation-info__verb__path">
+        /users/{open_id}/relation/r/{r_open_id}/types/{type}
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          r_open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          关联的人的open_id
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          用户open_id
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          type
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          关系类型  friend 朋友 , coworker 同事 等等
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X DELETE http://relationapi.qiyunxin.com/v1/users/{open_id}/relation/r/{r_open_id}/types/{<span class="built_in">type</span>}</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E8%8E%B7%E5%8F%96%E4%B8%8E%E6%8C%87%E5%AE%9A%E7%94%A8%E6%88%B7%E7%9A%84%E5%85%B3%E7%B3%BB%E7%B1%BB%E5%9E%8B" class="operation-info__title">获取与指定用户的关系类型</h2>
+
+    <div class="operation-info__description">获取与指定用户的关系类型
+</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--get">
+        GET
+      </div>
+      <div class="operation-info__verb__path">
+        /users/{open_id}/relation/r/{r_open_id}/types
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          r_open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          关联的人的open_id
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          用户open_id
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X GET http://relationapi.qiyunxin.com/v1/users/{open_id}/relation/r/{r_open_id}/types</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E8%8E%B7%E5%8F%96%E5%85%B3%E7%B3%BB%E5%B1%9E%E6%80%A7" class="operation-info__title">获取关系属性</h2>
+
+    <div class="operation-info__description">获取关系属性
+</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--get">
+        GET
+      </div>
+      <div class="operation-info__verb__path">
+        /users/{open_id}/types/{type}/r/{r_open_id}
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          r_open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          关联的人的open_id
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          type
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          关系类型  friend 朋友 , coworker 同事 等等
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          用户open_id
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X GET http://relationapi.qiyunxin.com/v1/users/{open_id}/types/{<span class="built_in">type</span>}/r/{r_open_id}</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E4%BF%AE%E6%94%B9%E5%85%B3%E7%B3%BB%E5%B1%9E%E6%80%A7" class="operation-info__title">修改关系属性</h2>
+
+    <div class="operation-info__description">修改关系属性
+</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--put">
+        PUT
+      </div>
+      <div class="operation-info__verb__path">
+        /users/{open_id}/types/{type}/r/{r_open_id}
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          r_open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          关联的人的open_id
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          type
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          关系类型  friend 朋友 , coworker 同事 等等
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          用户open_id
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Request Body
+  </div>
+  
+  
+    
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        props
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        属性
+      </div>
+    
+    
+    
+  </div>
+
+
+
+
+  
+</div>
+
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X PUT http://relationapi.qiyunxin.com/v1/users/{open_id}/types/{<span class="built_in">type</span>}/r/{r_open_id}</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E8%8E%B7%E5%8F%96%E8%B7%9F%E5%BD%93%E5%89%8D%E7%94%A8%E6%88%B7%E6%9C%89%E5%85%B3%E7%9A%84%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE-(%E5%86%85%E9%83%A8%E6%8E%A5%E5%8F%A3)" class="operation-info__title">获取跟当前用户有关的关系数据 (内部接口)</h2>
+
+    <div class="operation-info__description">获取跟当前用户有关的关系数据（内部接口）
+</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--get">
+        GET
+      </div>
+      <div class="operation-info__verb__path">
+        /relationlist
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          type
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          关系类型（为空即查询有关系的人）
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          direction
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          查询反向 默认为正向查询  reverse 反向查询
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          depth
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          深度 比如查询我的好友 深度为1  查询我的好友的好友深度为2（默认为1）
+        </div>
+      
+      
+    </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in query
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          用户open_id
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X GET http://relationapi.qiyunxin.com/v1/relationlist</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        []
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].open_id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        用户open_id
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        用户名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].type
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        关系类型  friend 朋友 , coworker 同事 等等
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].props
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        属性
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        [].type_props
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        关系类型的属性
+      </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E9%A2%84%E5%A4%87%E6%B7%BB%E5%8A%A0%E5%85%B3%E7%B3%BB(%E5%86%85%E9%83%A8%E6%8E%A5%E5%8F%A3)" class="operation-info__title">预备添加关系(内部接口)</h2>
+
+    <div class="operation-info__description">预备添加关系
+</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--post">
+        POST
+      </div>
+      <div class="operation-info__verb__path">
+        /prerelation/add/{open_id}
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          open_id
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          用户open_id
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Request Body
+  </div>
+  
+  
+    
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        用户名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        props
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        用户属性
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        r_open_id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        关联用户open_id
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        r_name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        关联用户名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        r_props
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        关联用户属性
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        type
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        关系类型  friend 朋友 , coworker 同事 等等
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        mutual
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          integer 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        相互关联 (1.相互关联 0.单项关联)
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        remark
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        备注信息，留言信息
+      </div>
+    
+    
+    
+  </div>
+
+
+
+
+  
+</div>
+
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X POST http://relationapi.qiyunxin.com/v1/prerelation/add/{open_id}</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        pre_relation_no
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        预备关系编号
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data.open_id
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        用户open_id
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data.name
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        用户名称
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data.type
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        关系类型  friend 朋友 , coworker 同事 等等
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        data.props
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        属性
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        type
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        关系类型  friend 朋友 , coworker 同事 等等
+      </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        props
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          object 
+        </div>
+      
+      
+    </div>
+    
+      <div class="reference-card__content__description">
+        属性
+      </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+      <div class="operation">
+  <div class="operation-info">
+    <h2 id="%E6%B7%BB%E5%8A%A0%E5%85%B3%E7%B3%BB-%EF%BC%88%E5%86%85%E9%83%A8%E6%8E%A5%E5%8F%A3%EF%BC%89" class="operation-info__title">添加关系 （内部接口）</h2>
+
+    <div class="operation-info__description">添加关系 （内部接口）
+</div>
+
+    <div class="operation-info__verb">
+      <div class="operation-info__verb__name operation-info__verb__name--post">
+        POST
+      </div>
+      <div class="operation-info__verb__path">
+        /relation/{pre_relation_no}
+      </div>
+    </div>
+  </div>
+  
+    <h3> Security Requirement </h3>
+    
+  <div class="security-requirement">
+    
+  </div>
+
+  <div class="security-requirement">
+    
+  </div>
+
+
+  
+  <div class="request">
+  <div class="request__title">
+    <div class="request__title__reference">
+      <h3>Request</h3>
+    </div>
+    <div class="request__title__sample">
+      <h3>Sample Request</h3>
+    </div>
+  </div>
+  <table class="request__content">
+    <tr>
+      <td class="request__content__reference">
+        <div class="reference">
+
+          
+
+          
+            <div class="reference-card">
+  <div class="reference-card__title">
+    Path
+  </div>
+  
+    <div class="reference-card__content ">
+      <div class="reference-card__content__info">
+        <div class="reference-card__content__info__name">
+          pre_relation_no
+        </div>
+        
+          <div class="reference-card__content__info__type">
+            string 
+          </div>
+        
+        
+          <div class="reference-card__content__info__required">
+            required
+          </div>
+        
+      </div>
+      
+        <div class="reference-card__content__usage">
+          Used in path
+        </div>
+      
+      
+        <div class="reference-card__content__description">
+          预备关系编号
+        </div>
+      
+      
+    </div>
+  
+</div>
+
+
+          
+
+          
+
+        </div>
+      </td>
+      <td class="request__content__sample">
+        
+  <div class="sample-snippet">
+    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -v -X POST http://relationapi.qiyunxin.com/v1/relation/{pre_relation_no}</span><br></pre></td></tr></table></figure>
+    <button class="dc-btn sample-snippet__copy-btn dc-btn--small" data-dc-has-tooltip="Copied!">Copy Request</button>
+  </div>
+
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+  <div class="response">
+  <div class="response__title">
+    <div class="response__title__reference">
+      <h3>Response</h3>
+    </div>
+    <div class="response__title__sample">
+      <h3>Sample Response</h3>
+    </div>
+  </div>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>200</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      返回
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+    <table class="response__content">
+      <tr>
+        <td class="response__content__reference">
+          <div class="reference">
+
+  <div class="reference__response-code">
+    
+      Status Code: <code>400</code>
+    
+  </div>
+
+  
+    <div class="reference__description">
+      错误
+    </div>
+  
+
+  <div class="reference-card">
+    <div class="reference-card__title">
+      Reference
+    </div>
+    
+      
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_code
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <div class="reference-card__content ">
+    <div class="reference-card__content__info">
+      <div class="reference-card__content__info__name">
+        err_msg
+      </div>
+      
+        <div class="reference-card__content__info__type">
+          string 
+        </div>
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+    
+  </div>
+
+</div>
+
+        </td>
+        <td class="response__content__sample">
+          
+
+        </td>
+      </tr>
+    </table>
+  
+</div>
+
+</div>
+
+    
+  </div>
+</div>
+
+              </div>
+
+        <div id="react-support-footer-root"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+    
+
+    <!-- js vendors -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.0/lunr.min.js"></script>
+
+    <!-- js source  -->
+    <script src="/script/doc.js"></script>
+
+    
+
+  </body>
+</html>
