@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 企云信开放平台
 subtitle:
 description:
 keywords:
@@ -13,8 +13,8 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://docs.qiyunxin.com
-root: /docs
+url: http://docs.qiyunxin.com/docs
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
