@@ -2,9 +2,8 @@ title: 企云信文档
 ---
 
 
-## 签名算法 （基础签名）
-
-签名生成的通用步骤如下：
+## 签名通用规则
+**企云信**签名生成的通用步骤如下：
 
 第一步，设所有发送或者接收到的数据为集合M，将集合M内非空参数值的参数按照参数名ASCII码从小到大排序（字典序），使用URL键值对的格式（即key1=value1&key2=value2…）拼接成字符串stringA。
 
@@ -13,7 +12,7 @@ title: 企云信文档
 1. ◆ 参数名ASCII码从小到大排序（字典序）；
 2. ◆ 如果参数的值为空不参与签名；
 3. ◆ 参数名区分大小写；
-4. ◆ 验证调用返回或vvchat主动通知签名时，传送的sign参数不参与签名，将生成的签名与该sign值作校验。
+4. ◆ 验证调用返回或**企云信**主动通知签名时，传送的sign参数不参与签名，将生成的签名与该sign值作校验。
 5. ◆ 支付接口可能增加字段，验证签名时必须支持增加的扩展字段
 
 第二步，在stringA最后拼接上key得到stringSignTemp字符串，并对stringSignTemp进行MD5运算，再将得到的字符串所有字符转换为大写，得到sign值signValue。
@@ -43,28 +42,52 @@ stringSignTemp=stringA+"&key=192006250b4c09247ec02edce69f6a2d" //注：key为平
 sign=MD5(stringSignTemp).toUpperCase()="9A0A8659F005D6984697E2CA0A9CF3B7" //注：MD5签名方式
 ```
 
-## 签名算法（联合签名）
+##基础签名
 
-第一步：对请求参数按照key=value的格式，并按照参数名ASCII字典序排序如下：
+基础签名规则与通用签名规则一样。签名的数据为公共数据，将接口header里的公用参数进行**通用签名**
+
+***一般安全级别的接口，可能只需要基础签名即可。***
+
+#### 公共参数如下：
+
+
+| 字段名 | 变量名 | 类型 | 描述 |
+| :--- | :--- | :--- | :--- |
+| 应用ID | app_id | string | 应用ID由平台下发 |
+| 随机码 | noncestr | string | 随机字符串码 |
+| 时间戳 | timestamp | string | 时间戳 10位 到秒 |
 
 ```
-stringA="amount=1&app_id=qyxd930ea5d5a258f4f&notify_url=http://test.com&ibuaiVcKdpRxkhJA&store_no=10000100
-&title=test;
+signString="app_id=test&noncestr=k9d7fgj23&timestamp=1522821617&key=XXXXXX"
+sign=MD5(signString).toUpperCase()="9A0A8659F005D6984697E2CA0A9CF3B7" //注：MD5签名方式
 ```
 
-第二步：拼接API密钥获取数据签名：
+
+## 数据签名
+
+***安全级别中等的接口，需要基础签名即可。***
+
+数据签名规则与通用签名规则一致,签名的数据为接口返回请求数据（回调接口返回数据）
+
+## 联合签名
+***安全级别要求高的接口，需要进行联合签名。***
+
+联合签名是数据签名+基础签名进行混合签名。
+
+
+第一步：进行数据签名的时候需要将基础签名加到签名数据尾部：
 
 ```
-dataSignTemp=stringA+"&key=192006250b4c09247ec02edce69f6a2d"+"&basesign=dgce5thdy8t3t6hk89grd3d5"
+dataAndBaseSign = MD5 (stringA+"&key=192006250b4c09247ec02edce69f6a2d"+"&basesign=dgce5thdy8t3t6hk89grd3d5").toUpperCase()
 //注：key为平台下发的
 // basesign 为基础数据签名所得
 ```
 
-第三步：完整签名：
+第二步：联合签名（基础签名+数据基础混合签名）：
 
 ```
-dataSignTemp=stringA+"&key=192006250b4c09247ec02edce69f6a2d"+"&basesign=dgce5thdy8t3t6hk89grd3d5"
-sign = basesign+"." + MD5(dataSignTemp).toUpperCase()  //基础签名 + "." + 数据签名
+sign = basesign+"." + dataAndBaseSign  //基础签名 + "." + 数据基础混合签名
+// 注意中间需要用“.”隔开
 ```
 
 ### 举例说明 （以此例子所示签名方式为准）
@@ -81,18 +104,6 @@ app\_key=123456
 baseSign = MD5( appKey + noncestr + timestamp).toUpperCase()
 ```
 
-数据联合签名:
-
-```
-// 按照 ASSCI排序请求参数：
-dataSignString = amount=1000&in_open_id=xd8wjr9jr02kjf823jse94kio8&notify_url=http://www.test.com/callback&out_open_id=lJsDBB01QzGpBKOC7uaZB6D0QGZWBMCS&out_order_no=2334234343zz&title=test
-// 拼接appkey和基础签名
-dataSign = dataSignString + "&key=123456" + "&basesign=" + baseSign
-
-// 获得联合签名
-sign = basesign + "." + MD5(dataSign).toUpperCase()
-```
-
 纯数据签名：
 
 ```
@@ -106,7 +117,21 @@ onlySign = MD5(onlyDataSign).toUpperCase()
 ```
 
 
-## 基础说明
+数据联合签名:
+
+```
+// 按照 ASSCI排序请求参数：
+dataSignString = amount=1000&in_open_id=xd8wjr9jr02kjf823jse94kio8&notify_url=http://www.test.com/callback&out_open_id=lJsDBB01QzGpBKOC7uaZB6D0QGZWBMCS&out_order_no=2334234343zz&title=test
+// 拼接appkey和基础签名
+dataSign = dataSignString + "&key=123456" + "&basesign=" + baseSign
+
+// 获得联合签名
+sign = basesign + "." + MD5(dataSign).toUpperCase()
+```
+
+
+
+## 接口基础说明
 
 #### 测试基地址: http://dev.vvchat.im
 
@@ -130,6 +155,8 @@ out\_open\_id:  lJsDBB01QzGpBKOC7uaZB6D0QGZWBMCS  // 出款账户
 | 签名 | sign | string | 签名数据 |
 
 ## 统一下单接口
+
+**基础签名**
 
 > 请求地址
 
@@ -167,11 +194,11 @@ POST /paybusapi/v1/pay/unifiedorder
 
 | 字段名 | 变量名 | 类型 | 示例值 | 描述 |
 | :--- | :--- | :--- | :--- | :--- |
-| 应用ID | app\_id | string | test | 调用接口提交的应用ID |
-| 店铺编号 | store\_no | string | s1234 | 调用接口提交的店铺编号 |
-| 随机码 | nonce\_str | string | IDS86ZD89ZD | 平台返回的随机码 |
-| 场景类型 | scene\_type | string | APP | 调用接口提交的场景类型 |
-| 预付款编号 | imprest\_code | string | d87sd8d7f99djf98vjkdnjjdf23 | 预付款编号，后续支付的时候需要用到 |
+| 应用ID | app_id | string | test | 调用接口提交的应用ID |
+| 店铺编号 | store_no | string | s1234 | 调用接口提交的店铺编号 |
+| 随机码 | nonce_str | string | IDS86ZD89ZD | 平台返回的随机码 |
+| 场景类型 | scene_type | string | APP | 调用接口提交的场景类型 |
+| 预付款编号 | imprest_code | string | d87sd8d7f99djf98vjkdnjjdf23 | 预付款编号，后续支付的时候需要用到 |
 | 签名 | sign | string | zd8s7f6jdk4dnf0sj | 平台返回的签名，用户校验返回的数据真伪性 |
 
 > 通知返回
@@ -184,13 +211,16 @@ POST /paybusapi/v1/pay/unifiedorder
 | 交易编号 | trade\_no | string | 201712023384923834 | 唯一交易编号 |
 | 第三方交易编号 | out\_trade\_no | string | xxxxxxx | 第三方平台的交易编号 |
 | 用户openid | open\_id | string | xxxxxxxxxxx | 用户唯一标示 |
-| 交易时间 | trade\_time | int64 | 1519631690 | 10位时间戳 |
-| 付款时间 | pay\_time | int64 | 1519631690 | 10位时间戳 |
-| 交易金额 | amount | int64 | 100 | 单位分 |
+| 交易时间 | trade\_time | string | 1519631690 | 10位时间戳 |
+| 付款时间 | pay\_time | string | 1519631690 | 10位时间戳 |
+| 交易金额 | amount | string | 100 | 单位分 |
 | 签名 | sign | string | xxxxxxxxxxxxxxxxxxx | 平台返回的签名，用户校验返回的数据真伪性 |
 
 
-## 代付接口（提现接口）
+## 代付接口
+**联合签名**
+
+将代付账号的**企云信**余额转向指定的用户**企云信**账户
 
 > 请求地址
 
@@ -224,6 +254,10 @@ POST /paybusapi/v1/app/agentpay
 
 ## 获取访问凭证(token)
 
+**无需签名**
+
+获取用户调用接口的凭证，拥有此凭证后才能调用特定的接口
+
 http状态码为200 将返回成功返回的参数。http状态码为400 将返回错误返回参数
 
 > 请求地址
@@ -244,6 +278,7 @@ GET  /userservices/v2/authorization/token?app_id=APPID&app_key=APPKEY&code=CODE
 | open_id   |  string       | IqxDpc-s6S_9RaXMmag39YVH7W810Z57| 用户唯一标示  |
 | scope |    string   |   snsapi_userinfo | 权限 |
 | token |    string   |   eyJhbGciOiJSUzI1NiIsInR5cCI6xxxxx | 访问凭证 |
+| expire_in   |  int       | 1522821617 | 失效时间,在此时间点后token自动失效，<br/>格式为10位数到秒的时间戳 int类型，类似：1522821617  |
 
 > 错误返回 400
 
@@ -252,7 +287,47 @@ GET  /userservices/v2/authorization/token?app_id=APPID&app_key=APPKEY&code=CODE
 | err_code   |  int       | 400| 错误代号  |
 | err_msg |    string   |   请求失败！ | 错误信息 |
 
+## 获取用户资料
+
+**无需签名**
+
+获取用户的资料，包括唯一标示，头像，昵称等等
+
+> 请求地址
+
+GET  /userservices/v2/authorization/userinfo
+
+> 请求参数
+
+| 参数   |      类型      |      作用域      | 参考值 | 说明 |
+|----------|:-------------:|------:|------:|------:|
+| Authorization   |  string       | header|eyJhbGciOiJSUzI1NiIsInR5cCI6xxxxx| 访问凭证token 
+
+> 成功返回 200
+
+
+| 参数   |      类型      |  参考值 | 说明 |
+|----------|:-------------:|------:|------:|
+| open_id   |  string       | eyJhbGciOiJSUzI1NiIsInR5cCI6xxxxx| 用户唯一标示  |
+| nickname |    string   |   小明 | 错误信息 |
+| avatar |    string   |   http://xxxxx.com/avator/xxxx | 头像 |
+| sex |    string   |   男 | 错误信息 |
+
+
+
+> 错误返回 400
+
+| 参数   |      类型      |  参考值 | 说明 |
+|----------|:-------------:|------:|------:|
+| err_code   |  int       | 400| 错误代号  |
+| err_msg |    string   |   请求失败！ | 错误信息 |
+
+
 ## 发送消息
+
+**无需签名**
+
+可以向用户发送消息
 
 http状态码为200 将返回成功返回的参数。http状态码为400 将返回错误返回参数
 

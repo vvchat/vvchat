@@ -4,6 +4,10 @@ title: 企云信文档
 
 ## 安装使用
 
+**JSSDK Demo下载**
+
+[JSSDK Demo](/resources/resource.html)
+
  **页面引入**
  
 ```

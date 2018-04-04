@@ -10,11 +10,16 @@
     "children": [{
       "text": "IM内H5",
       "type": "link",
-      "path": "jssdk/index.html"
+      "path": "h5/imh5.html"
     },{
       "text": "手机H5",
       "type": "link",
-      "path": "jssdk/h5.html"
+      "path": "h5/h5.html"
+    },
+    {
+      "text": "JSSDK文档",
+      "type": "link",
+      "path": "jssdk/jssdk.html"
     }]
   },
   {
