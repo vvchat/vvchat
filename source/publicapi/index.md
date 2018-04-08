@@ -156,7 +156,7 @@ out\_open\_id:  lJsDBB01QzGpBKOC7uaZB6D0QGZWBMCS  // 出款账户
 
 ## 统一下单接口
 
-**基础签名**
+**数据签名**
 
 > 请求地址
 
@@ -216,6 +216,45 @@ POST /paybusapi/v1/pay/unifiedorder
 | 交易金额 | amount | string | 100 | 单位分 |
 | 签名 | sign | string | xxxxxxxxxxxxxxxxxxx | 平台返回的签名，用户校验返回的数据真伪性 |
 
+## 查询交易信息
+
+**无需签名**
+
+> 请求地址
+
+GET  /paybusapi/v1/pay/unifiedorder
+
+> 请求参数
+
+| 参数   |      类型      |      作用域      | 参考值 | 说明 |
+|----------|:-------------:|------:|------:|------:|
+| imprest_code   |  string       | query|xxxxx| 预付款编号 imprest_code,out_trade_no二选一
+| out_trade_no   |  string       | query|xxxxx| 第三方交易号 imprest_code,out_trade_no二选一
+
+> 成功返回 200
+
+
+| 参数   |      类型      |  参考值 | 说明 |
+|----------|:-------------:|------:|------:|
+| open_id   |  string       | eyJhbGciOiJSUzI1NiIsInR5cCI6xxxxx| 下单用户唯一标示  |
+| store_no |    string   |   xxxx | 店铺编号 |
+| out_trade_no |    string   |   xxxxx |第三方唯一编号 |
+| trade_no |    string   |   xxxx | 平台唯一交易编号 |
+| imprest_code |    string   |   xxxx | 预付款编号 |
+| amount |    int64   |   1000 | 交易金额，单位分 |
+| title |    string   |   xxxx | 交易标题 |
+| remark |    string   |   xxxx | 交易备注 |
+| notify_url |    string   |   http://www.xxx.com | 回调地址 |
+| scene_type |    string   |   APP | 场景类型 APP,WEB |
+| status |    int   |   1 | 0.待支付 1.已支付 |
+
+
+> 错误返回 400
+
+| 参数   |      类型      |  参考值 | 说明 |
+|----------|:-------------:|------:|------:|
+| err_code   |  int       | 400| 错误代号  |
+| err_msg |    string   |   请求失败！ | 错误信息 |
 
 ## 代付接口
 **联合签名**
