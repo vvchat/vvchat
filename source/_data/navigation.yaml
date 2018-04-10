@@ -60,5 +60,91 @@
         "path": "resources/resource.html"
       }
     ]
-  }]
+  },
+  {
+      "text": "RESTful API",
+      "type": "label",
+      "children":[
+        {
+          "text": "用户服务",
+          "type": "link",
+          "path": "swagger/userservices.html"
+        },
+        {
+          "text": "关系服务",
+          "type": "link",
+          "path": "swagger/relationapi.html"
+        },
+         {
+          "text": "支付基础服务",
+          "type": "link",
+          "path": "swagger/payv2api.html"
+        },
+         {
+          "text": "支付业务服务",
+          "type": "link",
+          "path": "swagger/paybusapi.html"
+        },
+        {
+          "text": "店铺服务",
+          "type": "link",
+          "path": "swagger/storeapi.html"
+        },
+        {
+          "text": "群组服务",
+          "type": "link",
+          "path": "swagger/groupapi.html"
+        },
+        {
+          "text": "权限服务",
+          "type": "link",
+          "path": "swagger/rbacapi.html"
+        },
+        {
+          "text": "短信服务",
+          "type": "link",
+          "path": "swagger/smsapi.html"
+        },
+        {
+          "text": "红包服务",
+          "type": "link",
+          "path": "swagger/redpacket.html"
+        },
+        {
+          "text": "通知服务",
+          "type": "link",
+          "path": "swagger/notificationapi.html"
+        },
+        {
+          "text": "名字服务",
+          "type": "link",
+          "path": "swagger/nameapi.html"
+        },
+         {
+          "text": "通讯录服务",
+          "type": "link",
+          "path": "swagger/contactsapi.html"
+        },
+         {
+          "text": "设置服务",
+          "type": "link",
+          "path": "swagger/settingapi.html"
+        },
+        {
+          "text": "反馈服务",
+          "type": "link",
+          "path": "swagger/feedapi.html"
+        },
+        {
+          "text": "离线消息服务",
+          "type": "link",
+          "path": "swagger/imofflinemsgapi.html"
+        },
+         {
+          "text": "消息服务",
+          "type": "link",
+          "path": "swagger/messageapi.html"
+        }
+      ]
+    }]
 }
