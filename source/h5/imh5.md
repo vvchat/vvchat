@@ -6,15 +6,15 @@
 
 #### 准备工作
 
-**企云信**登录是基于[OAuth2.0协议标准](http://oauth.net/2/)构建的OAuth2.0授权登录系统。
+**VVChat**登录是基于[OAuth2**VVChat**.0协议标准](http://oauth.net/2/)构建的OAuth2.0授权登录系统。
 
-在进行**企云信** OAuth2.0授权登录接入之前，在企云信开放平台注册开发者帐号，并拥有一个已审核通过的应用，并获得相应的AppID和AppKey，申请企云信登录且通过审核后，可开始接入流程。
+在进行**VVChat** OAuth2.0授权登录接入之前，在**VVChat**开放平台注册开发者帐号，并拥有一个已审核通过的应用，并获得相应的AppID和AppKey，申请**VVChat**登录且通过审核后，可开始接入流程。
 
 **授权流程说明**
 
 授权流程分三步：
 
-1. 第三方发起**企云信**授权登录请求，**企云信**用户允许授权第三方应用后，**企云信**会拉起应用，并且带上授权临时票据code参数；
+1. 第三方发起**VVChat**授权登录请求，**VVChat**用户允许授权第三方应用后，**VVChat**会拉起应用，并且带上授权临时票据code参数；
 
 2. 通过code参数加上AppID和AppKey等，通过API换取访问token；
 
@@ -33,12 +33,12 @@ vvchat.call("auth",{app_id:"test",scope:scope,state:STATE},function(result){
 
 | 参数 | 是否必须 | 说明 |
 | :--- | :--- | :--- |
-| app\_id | 是 | 应用唯一ID，**企云信**开发平台下发 |
+| app\_id | 是 | 应用唯一ID，**VVChat**开发平台下发 |
 | scope | 是 | 应用授权域，获取个人信息填写 snsapi\_userinfo |
 | state | 否 | 用于保持请求与回调的状态，将原样返回第三方，该参数可以防止csrf攻击 |
 
 
-用户点击授权后，**企云信**客户端会被拉起，跳转至授权界面，用户在该界面点击允许或取消，将会在成功回调方法里将结果返回给调用方。
+用户点击授权后，**VVChat**客户端会被拉起，跳转至授权界面，用户在该界面点击允许或取消，将会在成功回调方法里将结果返回给调用方。
 
 ##### 返回说明
 
@@ -121,11 +121,11 @@ Authorization: TOKEN
 | sex | 用户性别  女  男 |
 
 
-## 企云信支付
+## **VVChat**支付
 
 ***准备工作***
 
-在进行**企云信**支付接入之前，在**企云信**开放平台注册开发者帐号，并拥有一个已审核通过的应用，并获得相应的AppID和AppKey，申请**企云信**支付且通过审核后，可开始接入流程。
+在进行**VVChat**支付接入之前，在**VVChat**开放平台注册开发者帐号，并拥有一个已审核通过的应用，并获得相应的AppID和AppKey，申请**VVChat**支付且通过审核后，可开始接入流程。
 
 ***支付流程说明***
 
@@ -133,7 +133,7 @@ Authorization: TOKEN
 
 1. 商户调用**统一下单接口**获取到**imprest_code**
 
-2. 商户用imprest_code调起**企云信**支付，用户确认支付后完成支付
+2. 商户用imprest_code调起**VVChat**支付，用户确认支付后完成支付
 
 3. 商户后端将接收到支付通知
 
@@ -141,7 +141,7 @@ Authorization: TOKEN
 
 [跳转到接口说明](/publicapi/index.html#统一下单接口)
 
-##### 第二步：调起**企云信**支付
+##### 第二步：调起**VVChat**支付
 
 JSSDK调用方式如下：
 
@@ -175,7 +175,7 @@ vvchat.call("pay",{imprest_code: IMPREST_CODE,app_id: APPID},function(result){
 
 ***准备工作***
 
-在进行**企云信**发送消息接入之前，在**企云信**开放平台注册开发者帐号，并拥有一个已审核通过的应用，并获得相应的AppID和AppKey，申请**企云信**支付且通过审核后，可开始接入流程。
+在进行**VVChat**发送消息接入之前，在**VVChat**开放平台注册开发者帐号，并拥有一个已审核通过的应用，并获得相应的AppID和AppKey，申请**VVChat**支付且通过审核后，可开始接入流程。
 
 ***发送消息流程说明***
 
@@ -234,14 +234,12 @@ vvchat.call("auth",{app_id:"test",scope: scope,state:STATE},function(result){
 
 参考[发送消息接口](/publicapi/index.html#发送消息)
 
+## **VVChat**基础分享(分享后的内容显示的样式是固定的)
 
-
-
-## 企云信基础分享
 
 ***准备工作***
 
-在进行**企云信**基础分享接入之前，在**企云信**开放平台注册开发者帐号，并拥有一个已审核通过的应用，并获得相应的AppID和AppKey，申请**企云信**支付且通过审核后，可开始接入流程。
+在进行**VVChat**基础分享接入之前，在**VVChat**开放平台注册开发者帐号，并拥有一个已审核通过的应用，并获得相应的AppID和AppKey，申请**VVChat**支付且通过审核后，可开始接入流程。
 
 ***基础分享流程说明***
 
@@ -250,21 +248,13 @@ vvchat.call("auth",{app_id:"test",scope: scope,state:STATE},function(result){
 1. 获取基础分享的所需的数据  
 
 
-2. 获取到数据调起**企云信**基础分享，用户确认分享后完成分享
+2. 获取到数据调起**VVChat**基础分享，用户确认分享后完成分享
 
 3. 调起方会收到分享结果的回调
 
-##### 第一步：请求CODE
+##### 第一步：获取分享内容
 
-调用JSSDK的方法（JSSDK的使用说明请参考**JSSDK文档**）
-
-```
-vvchat.call("share",{app_id:"test",share_title:share_title,sub_title:sub_title,share_url:share_url,thumb_url:thumb_url},function(result){
-
-            });
-```
-
-#### 参数说明
+###### 参数说明
 
 | 参数 |是否必须| 说明 |
 | :--- |:---  | :--- |
@@ -274,20 +264,37 @@ vvchat.call("share",{app_id:"test",share_title:share_title,sub_title:sub_title,s
 | share_url |是| 分享的链接 |
 | thumb_url |否| 预览图链接 |
 
-#### 返回说明
+##### 第二步：调用分享方法
 
-| 参数 | 说明 |
-| :--- | :--- |
-| code | 分享完成后的code |
-| error | 分享完成后的error |
+调用JSSDK的方法（JSSDK的使用说明请参考**JSSDK文档**）
+
+```
+vvchat.call("share",{app_id:"test",share_title:share_title,sub_title:sub_title,share_url:share_url,thumb_url:thumb_url},function(result){
+
+});
+```
+
+##### 第三步：调起方会收到分享结果的回调 包含回调完成的状态和信息
+
+> 成功返回 200
+
+| 参数   |      类型      |  参考值 | 说明 |
+|----------|:-------------:|------:|------:|
+| code   |  int       | 200| 状态码  |
+
+> 错误返回 400
+
+| 参数   |      类型      |  参考值 | 说明 |
+|----------|:-------------:|------:|------:|
+| code   |  int       | 400| 错误代号  |
+| err_msg |    string   |   请求失败！ | 错误信息 |
 
 
-
-## 企云信高级分享
+## **VVChat**高级分享(显示的内容是可变的)
 
 ***准备工作***
 
-在进行**企云信**高级分享接入之前，在**企云信**开放平台注册开发者帐号，并拥有一个已审核通过的应用，并获得相应的AppID和AppKey，申请**企云信**支付且通过审核后，可开始接入流程。
+在进行**VVChat**高级分享接入之前，在**VVChat**开放平台注册开发者帐号，并拥有一个已审核通过的应用，并获得相应的AppID和AppKey，申请**VVChat**支付且通过审核后，可开始接入流程。
 
 ***高级分享流程说明***
 
@@ -295,21 +302,12 @@ vvchat.call("share",{app_id:"test",share_title:share_title,sub_title:sub_title,s
 
 1. 获取高级分享的所需的数据 
 
-2. 获取到数据调起**企云信**高级分享方法，用户确认分享后完成分享
+2. 获取到数据调起**VVChat**高级分享方法，用户确认分享后完成分享
 
 3. 调起方会收到分享结果的回调
 
-##### 第一步：请求CODE
-
-调用JSSDK的方法（JSSDK的使用说明请参考**JSSDK文档**）
-
-```
-vvchat.call("share",{app_id:"test",share_title:share_title,sub_title:sub_title,share_url:share_url,thumb_url:thumb_url,share_data_url:share_data_url},function(result){
-
-            });
-```
-
-#### 参数说明
+##### 第一步：获取高级分享的所需的数据 
+######  参数说明
 
 | 参数 |是否必须| 说明 |
 | :--- |:---  | :--- |
@@ -318,12 +316,33 @@ vvchat.call("share",{app_id:"test",share_title:share_title,sub_title:sub_title,s
 | sub_title |否| 分享副标题 |
 | share_url |是| 分享的链接 |
 | thumb_url |否| 预览图链接 |
-| share_ data_url |否| 自定义数据内容 |
+| share_ data_url |否 |{"tpl_header": "vctalk","tpl_version": "v1","tpl_type":"MultipleLine","data": ["内容1","内容2"]}|
+##### 第二步：调用分享的方法
 
+
+调用JSSDK的方法（JSSDK的使用说明请参考**JSSDK文档**）
+
+```
+vvchat.call("share",{app_id:"test",share_title:share_title,sub_title:sub_title,share_url:share_url,thumb_url:thumb_url,share_data_url:share_data_url},function(result){
+
+});
+```
+
+##### 第三步：调起方会收到分享结果的回调 包含回调完成的状态和信息
 #### 返回说明
 
-| 参数 | 说明 |
-| :--- | :--- |
-| code | 分享完成后的code |
-| error | 分享完成后的error |
+> 成功返回 200
+
+| 参数   |      类型      |  参考值 | 说明 |
+|----------|:-------------:|------:|------:|
+| code   |  int       | 200| 状态码  |
+
+
+> 错误返回 400
+
+| 参数   |      类型      |  参考值 | 说明 |
+|----------|:-------------:|------:|------:|
+| code   |  int       | 400| 错误代号  |
+| err_msg |    string   |   请求失败！ | 错误信息 |
+
 
